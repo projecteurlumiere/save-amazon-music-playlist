@@ -1,6 +1,6 @@
 # Usage
 
-This script adds buttons that allow you to save the Amazon Music playlist you currently browse. Just visit the page with the playlist you want to save and press the button.
+This script adds buttons that allow you to save Amazon Music playlists. Just visit the page with the playlist you want to save and press the button.
 
 Curated (made by Amazon) and personal playlists (My Likes, etc.) are supported; albums are not supported.
 
