@@ -1,3 +1,29 @@
+# Usage
+
+This script adds buttons that allow you to save the Amazon Music playlist you currently browse. Just visit the page with the playlist you want to save and press the button.
+
+Curated (made by Amazon) and personal playlists (My Likes, etc.) are supported; albums are not supported.
+
+Tested on [music.amazon.fr](https://music.amazon.fr) but the regional versions should work fine.
+
+Once you press the button, the script compiles a JSON file with data about the songs and saves it to your computer.
+
+The output file contains the following:
+* Index (starting with 1 from the top-most song)
+* Title
+* Artist
+* Album
+* Duration
+
+Apparently, it should be FreeYourMusic friendly but it has not been tested.
+
+The script depends on the selectable DOM content. Amazon Music is a heavy and unpredictable website: some elements may become unselectable. If you do not want to lose some entries in your exported playlist, here are some tips:
+* Keep in mind how many songs there are in the playlist.
+* Make sure your window is maximized (otherwise, the layout changes and the export will not work)
+* Do not rush: make sure the content (music entries) has finished loading.
+* If your playlist contains fewer than 500 songs, it should be safe to export it right away.
+* If your playlist contains more than 500 songs, scroll to bottom until you get all songs. After that you might need to scroll to top once again as in the meantime the top-most songs may become undetectable. 
+
 # Licence
 
 Copyright 2024 projecteurlumiere
