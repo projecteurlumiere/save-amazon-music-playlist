@@ -17,7 +17,7 @@
 // @match        https://music.amazon.com.br/*
 // @match        https://music.amazon.in/*
 // @grant        none
-// @licence      MIT
+// @license      MIT
 // ==/UserScript==
 
 (function() {
@@ -69,7 +69,7 @@
           "try to maximize your window and make sure album names are positioned next to song durations, and not below song titles")
         }
         else {
-          alert("Error! Try to make sure you're on the playlist page you want to export (albums are not supported)");
+          alert("Error! Make sure you're on the playlist page you want to export (albums are not supported)");
         }
       }
     })
@@ -88,6 +88,7 @@
       Array.from(document.querySelectorAll("music-container music-image-row"));
 
     let playlist = [];
+    let n_total = 0;
 
     entries.forEach((e) => {
       playlist.push({
@@ -97,13 +98,14 @@
         album: e.querySelector(".col3 > music-link").title,
         duration: e.querySelector(".col4 > music-link").title
       })
+      n_total += 1
     })
 
     const n_first = playlist[0].index
     const n_last = playlist[playlist.length - 1].index
 
     let pretty_json = JSON.stringify(playlist, null, 2);
-    download(pretty_json, "application/json", composeName(n_first, n_last));
+    download(pretty_json, "application/json", composeName(n_first, n_last, n_total));
   }
 
   function download(content, mimeType, filename) {
@@ -116,7 +118,7 @@
     a.remove();
   }
 
-  function composeName(n_first, n_last) {
+  function composeName(n_first, n_last, n_total) {
     const header = document.querySelector("music-detail-header[label]").shadowRoot;
     const playlistType =
           capitalize(header.querySelector(".label").innerText.toLowerCase());
@@ -132,7 +134,7 @@
       alert("Your playlist may be incomplete: scroll to the bottom of the page until you get the entire playlist")
     }
 
-    return `${playlistType} - ${playlistTitle} - from ${n_first} to ${n_last}`
+    return `${playlistType} - ${playlistTitle} - ${n_total} song(s) in total - from ${n_first} to ${n_last}`
   }
 
   function capitalize(str) {
