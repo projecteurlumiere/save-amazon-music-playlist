@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Save Amazon Music playlist in JSON format
-// @namespace    https://music.amazon.com
+// @namespace    https://github.com/projecteurlumiere/save-amazon-music-playlist
 // @version      2024-05-15
 // @description  This script lets you export Amazon Music playlist you browse as JSON file
 // @author       projecteurlumiere
