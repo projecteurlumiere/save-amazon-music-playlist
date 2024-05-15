@@ -1,4 +1,4 @@
-// Should work with browsser console
+// Old version but should work in the browser console
 
 (() => {
   const entries =
