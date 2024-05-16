@@ -1,23 +1,35 @@
 // ==UserScript==
-// @name         Save Amazon Music playlist in JSON format
-// @namespace    https://github.com/projecteurlumiere/save-amazon-music-playlist
-// @version      2024-05-15
-// @description  Export Amazon Music playlists in JSON right from their pages
-// @author       projecteurlumiere
-// @match        https://music.amazon.com/*
-// @match        https://music.amazon.co.uk/*
-// @match        https://music.amazon.fr/*
-// @match        https://music.amazon.de/*
-// @match        https://music.amazon.it/*
-// @match        https://music.amazon.es/*
-// @match        https://music.amazon.co.jp/*
-// @match        https://music.amazon.ca/*
-// @match        https://music.amazon.com.au/*
-// @match        https://music.amazon.com.mx/*
-// @match        https://music.amazon.com.br/*
-// @match        https://music.amazon.in/*
-// @grant        none
-// @license      MIT
+// @name               Save Amazon Music playlist in JSON
+// @name:fr            Save Amazon Music playlist in JSON
+// @name:de            Save Amazon Music playlist in JSON
+// @name:it            Save Amazon Music playlist in JSON
+// @name:es            Save Amazon Music playlist in JSON
+// @name:ja            Save Amazon Music playlist in JSON
+// @name:pt-BR         Save Amazon Music playlist in JSON
+// @namespace          https://github.com/projecteurlumiere/save-amazon-music-playlist
+// @version            2024-05-15
+// @description        This script adds an export button at Amazon Music playlist pages
+// @description:fr     This script adds an export button at Amazon Music playlist pages
+// @description:de     This script adds an export button at Amazon Music playlist pages
+// @description:it     This script adds an export button at Amazon Music playlist pages
+// @description:es     This script adds an export button at Amazon Music playlist pages
+// @description:ja     This script adds an export button at Amazon Music playlist pages
+// @description:pt-BR  This script adds an export button at Amazon Music playlist pages
+// @author             projecteurlumiere
+// @match              https://music.amazon.com/*
+// @match              https://music.amazon.co.uk/*
+// @match              https://music.amazon.fr/*
+// @match              https://music.amazon.de/*
+// @match              https://music.amazon.it/*
+// @match              https://music.amazon.es/*
+// @match              https://music.amazon.co.jp/*
+// @match              https://music.amazon.ca/*
+// @match              https://music.amazon.com.au/*
+// @match              https://music.amazon.com.mx/*
+// @match              https://music.amazon.com.br/*
+// @match              https://music.amazon.in/*
+// @grant              none
+// @license            MIT
 // ==/UserScript==
 
 (function() {
@@ -28,12 +40,12 @@
   async function whenPlaylistAvailable(selector) {
     while (document.querySelectorAll(selector).length === 0) {
       console.log("waiting for playlist");
-        await new Promise(r => setTimeout(r, 1000));
+      await new Promise(r => setTimeout(r, 1000));
     }
   }
 
   function insertButtons() {
-    console.log("Inserting buttons");
+    console.log("inserting buttons");
 
     document.querySelector("body").insertAdjacentHTML('beforeend', `
       <style>
@@ -115,7 +127,7 @@
     a.setAttribute('href', url) // Set "a" element link
     a.setAttribute('download', filename) // Set download filename
     a.click() // Start downloading
-    a.remove();
+    a.remove()
   }
 
   function composeName(n_first, n_last, n_total) {
