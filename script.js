@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name               Save Amazon Music playlist in JSON
-// @name:fr            Save Amazon Music playlist in JSON
-// @name:de            Save Amazon Music playlist in JSON
-// @name:it            Save Amazon Music playlist in JSON
-// @name:es            Save Amazon Music playlist in JSON
-// @name:ja            Save Amazon Music playlist in JSON
-// @name:pt-BR         Save Amazon Music playlist in JSON
+// @name               Save Amazon Music playlist as JSON file
+// @name:fr            Save Amazon Music playlist as JSON file
+// @name:de            Save Amazon Music playlist as JSON file
+// @name:it            Save Amazon Music playlist as JSON file
+// @name:es            Save Amazon Music playlist as JSON file
+// @name:ja            Save Amazon Music playlist as JSON file
+// @name:pt-BR         Save Amazon Music playlist as JSON file
 // @namespace          https://github.com/projecteurlumiere/save-amazon-music-playlist
 // @version            2024-05-15
 // @description        This script adds an export button at Amazon Music playlist pages
